@@ -7,7 +7,7 @@ import com.study.bookstore.entities.Book;
 
 public class BookMapper {
 
-    public Book toEntity(BookDTO dto, Author author) {
+    public static Book toEntity(BookDTO dto, Author author) {
         return new Book(
                 null,
                 dto.title(),
@@ -18,7 +18,7 @@ public class BookMapper {
         );
     }
 
-    public BookDTO toDTO(Book book) {
+    public static BookDTO toDTO(Book book) {
         return new BookDTO(
                 book.getTitle(),
                 book.getAuthor().getId(),
