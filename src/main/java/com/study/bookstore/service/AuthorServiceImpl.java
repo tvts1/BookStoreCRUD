@@ -50,11 +50,12 @@ public class AuthorServiceImpl implements AuthorService{
 
         existingAuthor.setName(dto.name());
 
-        List<Book> books = dto.books().stream()
-                .map(BookDTO -> BookMapper.toEntity(BookDTO, existingAuthor))
-                .collect(Collectors.toList());
-
-        existingAuthor.setBooks(books);
+        if (dto.books() != null) {
+            List<Book> books = dto.books().stream()
+                    .map(bookDTO -> BookMapper.toEntity(bookDTO, existingAuthor))
+                    .collect(Collectors.toList());
+            existingAuthor.setBooks(books);
+        }
 
         authorRepository.save(existingAuthor);
         return AuthorMapper.toDTO(existingAuthor);
