@@ -7,11 +7,14 @@ import com.study.bookstore.entities.Book;
 import com.study.bookstore.mapper.AuthorMapper;
 import com.study.bookstore.mapper.BookMapper;
 import com.study.bookstore.repository.AuthorRepository;
+import org.springframework.stereotype.Service;
+
 import static com.study.bookstore.util.EntityFinder.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class AuthorServiceImpl implements AuthorService{
 
     private final AuthorRepository authorRepository;

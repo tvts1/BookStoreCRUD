@@ -6,10 +6,13 @@ import com.study.bookstore.entities.Book;
 import com.study.bookstore.mapper.BookMapper;
 import com.study.bookstore.repository.AuthorRepository;
 import com.study.bookstore.repository.BookRepository;
+import org.springframework.stereotype.Service;
+
 import static com.study.bookstore.util.EntityFinder.*;
 
 import java.util.List;
 
+@Service
 public class BookServiceImpl implements BookService{
 
     private final BookRepository bookRepository;
