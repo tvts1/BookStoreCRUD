@@ -22,6 +22,7 @@ public class Book implements Serializable {
     @JoinColumn(name = "author_id")
     private Author author;
 
+    @Column(name = "publication_year")
     private Integer year;
     private String isbn;
     private Double price;
